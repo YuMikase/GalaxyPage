@@ -1,12 +1,12 @@
-//–ÚŸ‚ÌƒŠƒXƒg‚ğİ’è
-var contents_list = ['Home', '‘È‰~‹â‰Í‚É‚Â‚¢‚Ä', '‰QŠª‹â‰Í‚É‚Â‚¢‚Ä', '‹â‰Í‚Ì˜r‚ğ•`‚­iƒAƒjƒ[ƒVƒ‡ƒ“j', '–§“x”giƒAƒjƒ[ƒVƒ‡ƒ“j'];
-//‚»‚ê‚¼‚ê‚Ìhtmlƒtƒ@ƒCƒ‹–¼
+//ç›®æ¬¡ã®ãƒªã‚¹ãƒˆã‚’è¨­å®š
+var contents_list = ['Home', 'æ¥•å††éŠ€æ²³ã«ã¤ã„ã¦', 'æ¸¦å·»éŠ€æ²³ã«ã¤ã„ã¦', 'éŠ€æ²³ã®è…•ã‚’æãï¼ˆã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ï¼‰', 'å¯†åº¦æ³¢'];
+//ãã‚Œãã‚Œã®htmlãƒ•ã‚¡ã‚¤ãƒ«å
 var contents_list_file = ['index', 'ellipse', 'spiral', 'varArm', 'dwave'];
-//–ÚŸ‚Ì—v‘f”‚ğæ“¾
+//ç›®æ¬¡ã®è¦ç´ æ•°ã‚’å–å¾—
 var cont_len = contents_list.length;
 
 
-/*----------‘è‚Æ–ÚŸ‚Ìo—Í----------*/
+/*----------é¡Œã¨ç›®æ¬¡ã®å‡ºåŠ›----------*/
 function out_contents(n) {
     document.write("<h1>" + contents_list[n] + "</h1><div id='contents'>");
     for (var i = 0; i < cont_len; i++) {
