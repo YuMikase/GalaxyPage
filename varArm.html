@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="Shift-JIS" />
+        <meta charset="UTF-8" />
         <title>Galaxy - Arms</title>
         <script type="text/javascript" src="js/anime.min.js"></script>
         <script type="text/javascript" src="js/common.js"></script>
@@ -13,62 +13,62 @@
         </header>
         <main>
             <p>
-                ���ꂼ��̃p�����[�^��ݒ肵�āuRUN�v�{�^���������ƃA�j���[�V������\������B
-                <br />�f�t�H���g�ł̐ݒ肪���邽�߁A���̂܂܁uRUN�v�{�^���������Ă���̘͂r�����邱�Ƃ��ł���B
+                それぞれのパラメータを設定して「RUN」ボタンを押すとアニメーションを表示する。
+                <br />デフォルトでの設定があるため、そのまま「RUN」ボタンを押しても銀河の腕を見ることができる。
                 <br />
-                <br />���̃A�j���[�V�����\���̉�����s���B
-                <br />���̊Ԋu�������ĕ����̓��S�ȉ~��`���B���̑ȉ~�̐��オ���x�̍����Ƃ���ŁA���̂Ȃ��Ƃ��낪���x�̒Ⴂ�ꏊ�Ƃ���B
-                ��]���Ȃ���ԁi��]����0�ɐݒ肵���Ƃ��j�́A�A�j���[�V�������͎̂~�܂��Ă��邪�A
-                ��͓��̖��x�g�͓����Ă�����̂Ƃ���B�����
-                ���̃X�s�[�h�ŉ�]�����@�����̉�]����X�s�[�h�ɂ��킹�ăt���[�����[�g�𒲐������J�����Ō���ƁA
-                ��@�̉H���~�܂��Č������ԂƓ����ł���B
-                ���̕����̓��S�ȉ~�𒆐S���珇�ɉ�]������ƁA��̘͂r�������B
+                <br />このアニメーション表現の解説を行う。
+                <br />一定の間隔をあけて複数の同心楕円を描く。この楕円の線上が密度の高いところで、線のないところが密度の低い場所とする。
+                回転がない状態（回転数を0に設定したとき）は、アニメーション自体は止まっているが、
+                銀河内の密度波は動いているものとする。これは
+                一定のスピードで回転する扇風機をその回転するスピードにあわせてフレームレートを調整したカメラで見ると、
+                扇風機の羽が止まって見える状態と同じである。
+                この複数の同心楕円を中心から順に回転させると、銀河の腕が現れる。
                 <br />
-                <br />��]������摜���~�ȊO�ɂ���ƁA�r�̖{�����ς��B��̘͂r�̖{���́A�摜�̒��_�i�ϋȓ_�j�̐��ƈ�v����B
-                ���̒��_�̐��́A��͒��S�Ŕ������锚���ior���ˁj�̎����Ɖ�]���x�ɂ���ĕς��̂ł͂Ȃ����낤���B
-                ���݂ɁA��X������V�̐��͂͘r��5�{�����Ă���A���x�g�̌`���܊p�`�ɂ��邱�ƂōČ��ł���B
+                <br />回転させる画像を円以外にすると、腕の本数が変わる。銀河の腕の本数は、画像の頂点（変曲点）の数と一致する。
+                この頂点の数は、銀河中心で発生する爆発（or放射）の周期と回転速度によって変わるのではないだろうか。
+                因みに、我々がいる天の川銀河は腕を5本持っており、密度波の形を五角形にすることで再現できる。
             </p>
-            <p>�i���̃A�j���[�V�����ł͕����Ă����Ǝ~�܂��Ă��܂����A����͂������������ݒ�ɂȂ��Ă��邾���ł���B�j</p>
+            <p>（このアニメーションでは放っておくと止まってしまうが、それはただそういう設定になっているだけである。）</p>
 
             <form style="border-style:solid none; border-width:1px; padding:4px 0px;">
                 <p>
-                    �ȉ~�̐��F<input type="number" value="100" id="n" />
-                    <small>�i������ς��Ă��債���ω��͂Ȃ��j</small>
+                    楕円の数：<input type="number" value="100" id="n" />
+                    <small>（ここを変えても大した変化はない）</small>
                 </p>
                 <p>
-                    ���S�̑ȉ~�̑傫��[px]�F<input type="number" value="6" id="fsize" />
-                    <small>�i������ς��Ă��債���ω��͂Ȃ��j</small>
+                    中心の楕円の大きさ[px]：<input type="number" value="6" id="fsize" />
+                    <small>（ここを変えても大した変化はない）</small>
                 </p>
                 <p>
-                    �ȉ~�̊g��Ԋu[px]�F<input type="number" value="5" id="dsize" />
-                    <small>�i������ς��Ă��債���ω��͂Ȃ��j</small>
+                    楕円の拡大間隔[px]：<input type="number" value="5" id="dsize" />
+                    <small>（ここを変えても大した変化はない）</small>
                 </p>
                 <p>
-                    ���a�ƒZ�a�̔�i��/�Z�j�F<input type="number" value="1.2" id="alpha" />
-                    <small>�i�ȉ~�̌`���ς�����B1���Ɛ^�~�ɂȂ�̂Řr�͌���Ȃ��B1���傫�������Ŏ����Ă݂Ăˁj</small>
+                    長径と短径の比（長/短）：<input type="number" value="1.2" id="alpha" />
+                    <small>（楕円の形状を変えられる。1だと真円になるので腕は現れない。1より大きい数字で試してみてね）</small>
                 </p>
                 <p>
-                    ��]���F<input type="number" value="100" id="nrot" />
-                    <small>�i������傫������Ɖ�]�������Ȃ�̂ŁA�r�̊��������ω�����B�j</small>
+                    回転数：<input type="number" value="100" id="nrot" />
+                    <small>（ここを大きくすると回転が速くなるので、腕の巻き数が変化する。）</small>
                 </p>
                 <p>
-                    �Đ�����[s]�F<input type="number" value="10000" id="time" />
-                    <small>�i������傫������Ɖ�]���������ɂȂ�B��]���̐ݒ�Ǝ����I�ɑ債�ĕς��Ȃ��j</small>
+                    再生時間[s]：<input type="number" value="10000" id="time" />
+                    <small>（ここを大きくすると回転がゆっくりになる。回転数の設定と実質的に大して変わらない）</small>
                 </p>
                 <p>
-                    ���ԊԊu[ms]�F<input type="number" value="100" id="dtime" />
-                    <small>�i����ȉ~����]���Ă��玟�̑ȉ~����]���n�߂�܂ł̊Ԋu�B��]���̐ݒ�Ǝ����I�ɑ債�ĕς��Ȃ��j</small>
+                    時間間隔[ms]：<input type="number" value="100" id="dtime" />
+                    <small>（ある楕円が回転してから次の楕円が回転し始めるまでの間隔。回転数の設定と実質的に大して変わらない）</small>
                 </p>
                 <p>
-                    ��]������摜�̑I���F<select id="rotimg">
-                        <option selected>�~</option>
-                        <option>�O�p</option>
-                        <option>�l�p</option>
-                        <option>�܊p</option>
-                        <option>�O����</option>
-                        <option>�n�[�g</option>
+                    回転させる画像の選択：<select id="rotimg">
+                        <option selected>円</option>
+                        <option>三角</option>
+                        <option>四角</option>
+                        <option>五角</option>
+                        <option>三日月</option>
+                        <option>ハート</option>
                     </select>
-                    <small>�i�~�ȊO�̉摜�������Ă݂Ăˁj</small>
+                    <small>（円以外の画像も試してみてね）</small>
                 </p>
                 <input type="button" value="RUN" onClick="run()" />
             </form>
@@ -86,19 +86,19 @@
                 var max_size = fsize + n * dsize;
                 var a = document.getElementById("rotimg").value;
                 switch (a) {
-                    case '�O�p':
+                    case '三角':
                         var rotimg = 'tri';
                         break;
-                    case '�l�p':
+                    case '四角':
                         var rotimg = 'squ';
                         break;
-                    case '�܊p':
+                    case '五角':
                         var rotimg = 'pen';
                         break;
-                    case '�O����':
+                    case '三日月':
                         var rotimg = 'moon';
                         break;
-                    case '�n�[�g':
+                    case 'ハート':
                         var rotimg = 'heart';
                         break;
                     default:
@@ -106,7 +106,7 @@
                 }
 
 
-                document.write("<div style='height:30px; width:200px;'><a href='varArm.html'>�����l���֖͂߂�</a></div>");
+                document.write("<div style='height:30px; width:200px;'><a href='varArm.html'>←数値入力へ戻る</a></div>");
                 document.write("<div style='background-color:black; height:"
                     + max_size * alpha + "; width:" + max_size * alpha + ";' >");
                 for (i = 1; i <= n; i++) {
