@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="Shift-JIS" />
+    <link rel="Stylesheet" href="css/common.css" />
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anime.min.js"></script>
+    <script type="text/javascript" src="js/dwave.js"></script>
+</head>
+    
+<body>
+    <header>
+        <script type="text/javascript">out_contents(4);</script>
+    </header>
+    <main>
+        <p>ここでは密度波の動きをアニメーションで表現してみたい。</p>
+        <form style="border-style:solid none; border-width:1px; padding:4px 0px;">
+            <p>
+                粒子の数：<input type="number" value="30" id="num_of_sq" />
+            </p>
+            <p>
+                粒子の大きさ[px]：<input type="number" value="10" id="sq_size" />
+            </p>
+            <p>
+                粒子間の距離[px]：<input type="number" value="5" id="sq_margin" />
+            </p>
+            <p>
+                音速：<input type="number" value="20" id="sound_speed" />
+                <small>（大きくすると波の速度が上がるよ）</small>
+            </p>
+            <input type="button" value="RUN" onClick="run()" />
+        </form>
+        <script type="text/javascript">
+            function run() {
+                var num_of_sq = Number(document.getElementById("num_of_sq").value);
+                var sq_size = Number(document.getElementById("sq_size").value);
+                var sq_margin = Number(document.getElementById("sq_margin").value);
+                var sound_speed = Number(document.getElementById("sound_speed").value);
+                document.write("<div style='height:30px; width:200px;'><a href='dwave.html'>←数値入力へ戻る</a></div>");
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
+            }
+        </script>
+    </main>
+</body>
+</html>

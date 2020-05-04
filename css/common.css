@@ -1,0 +1,39 @@
+html {
+    font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ";
+    font-weight: 900;
+}
+
+/*----------題、目次の設定----------*/
+/*題の設定*/
+h1 {
+    border: solid 4px;
+    text-align: center;
+}
+/*目次全体*/
+#contents {
+    border: solid 4px;
+    text-align: center;
+}
+/*今開いているページ*/
+#bor {
+    padding: 2px;
+    border: solid 1px black;
+    margin: 4px 4px;
+}
+/*今開いていないページ*/
+#nbor {
+    padding: 2px;
+    margin: 5px 5px;
+}
+/*----------body部分の設定----------*/
+body {
+    width: 800px;
+    margin: 10px auto;
+    padding: 5px 20px;
+    border: solid 10px;
+}
+/*----------フッターの設定----------*/
+footer {
+    border-top: solid 1px gray;
+    text-align: center;
+}

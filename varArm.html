@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="Shift-JIS" />
+        <title>Galaxy - Arms</title>
+        <script type="text/javascript" src="js/anime.min.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+        <link rel="Stylesheet" href="css/common.css" />
+    </head>
+    <body>
+        <header>
+            <script type="text/javascript">out_contents(3);</script>
+        </header>
+        <main>
+            <p>
+                それぞれのパラメータを設定して「RUN」ボタンを押すとアニメーションを表示する。
+                <br />デフォルトでの設定があるため、そのまま「RUN」ボタンを押しても銀河の腕を見ることができる。
+                <br />
+                <br />このアニメーション表現の解説を行う。
+                <br />一定の間隔をあけて複数の同心楕円を描く。この楕円の線上が密度の高いところで、線のないところが密度の低い場所とする。
+                回転がない状態（回転数を0に設定したとき）は、アニメーション自体は止まっているが、
+                銀河内の密度波は動いているものとする。これは
+                一定のスピードで回転する扇風機をその回転するスピードにあわせてフレームレートを調整したカメラで見ると、
+                扇風機の羽が止まって見える状態と同じである。
+                この複数の同心楕円を中心から順に回転させると、銀河の腕が現れる。
+                <br />
+                <br />回転させる画像を円以外にすると、腕の本数が変わる。銀河の腕の本数は、画像の頂点（変曲点）の数と一致する。
+                この頂点の数は、銀河中心で発生する爆発（or放射）の周期と回転速度によって変わるのではないだろうか。
+                因みに、我々がいる天の川銀河は腕を5本持っており、密度波の形を五角形にすることで再現できる。
+            </p>
+            <p>（このアニメーションでは放っておくと止まってしまうが、それはただそういう設定になっているだけである。）</p>
+
+            <form style="border-style:solid none; border-width:1px; padding:4px 0px;">
+                <p>
+                    楕円の数：<input type="number" value="100" id="n" />
+                    <small>（ここを変えても大した変化はない）</small>
+                </p>
+                <p>
+                    中心の楕円の大きさ[px]：<input type="number" value="6" id="fsize" />
+                    <small>（ここを変えても大した変化はない）</small>
+                </p>
+                <p>
+                    楕円の拡大間隔[px]：<input type="number" value="5" id="dsize" />
+                    <small>（ここを変えても大した変化はない）</small>
+                </p>
+                <p>
+                    長径と短径の比（長/短）：<input type="number" value="1.2" id="alpha" />
+                    <small>（楕円の形状を変えられる。1だと真円になるので腕は現れない。1より大きい数字で試してみてね）</small>
+                </p>
+                <p>
+                    回転数：<input type="number" value="100" id="nrot" />
+                    <small>（ここを大きくすると回転が速くなるので、腕の巻き数が変化する。）</small>
+                </p>
+                <p>
+                    再生時間[s]：<input type="number" value="10000" id="time" />
+                    <small>（ここを大きくすると回転がゆっくりになる。回転数の設定と実質的に大して変わらない）</small>
+                </p>
+                <p>
+                    時間間隔[ms]：<input type="number" value="100" id="dtime" />
+                    <small>（ある楕円が回転してから次の楕円が回転し始めるまでの間隔。回転数の設定と実質的に大して変わらない）</small>
+                </p>
+                <p>
+                    回転させる画像の選択：<select id="rotimg">
+                        <option selected>円</option>
+                        <option>三角</option>
+                        <option>四角</option>
+                        <option>五角</option>
+                        <option>三日月</option>
+                        <option>ハート</option>
+                    </select>
+                    <small>（円以外の画像も試してみてね）</small>
+                </p>
+                <input type="button" value="RUN" onClick="run()" />
+            </form>
+            <script type="text/javascript">
+
+            function run() {
+                var n = Number(document.getElementById("n").value);
+                var fsize = Number(document.getElementById("fsize").value);
+                var dsize = Number(document.getElementById("dsize").value);
+                var alpha = Number(document.getElementById("alpha").value);
+                var nrot = Number(document.getElementById("nrot").value);
+                var time = Number(document.getElementById("time").value);
+                var dtime = Number(document.getElementById("dtime").value);
+                var size = fsize
+                var max_size = fsize + n * dsize;
+                var a = document.getElementById("rotimg").value;
+                switch (a) {
+                    case '三角':
+                        var rotimg = 'tri';
+                        break;
+                    case '四角':
+                        var rotimg = 'squ';
+                        break;
+                    case '五角':
+                        var rotimg = 'pen';
+                        break;
+                    case '三日月':
+                        var rotimg = 'moon';
+                        break;
+                    case 'ハート':
+                        var rotimg = 'heart';
+                        break;
+                    default:
+                        var rotimg = 'gal';
+                }
+
+
+                document.write("<div style='height:30px; width:200px;'><a href='varArm.html'>←数値入力へ戻る</a></div>");
+                document.write("<div style='background-color:black; height:"
+                    + max_size * alpha + "; width:" + max_size * alpha + ";' >");
+                for (i = 1; i <= n; i++) {
+                    document.write("<img src='cont/img/" + rotimg
+                    + ".png' id='gal" + i
+                    + "'"
+                    + ">");
+                }
+                document.write("</div>");
+                for (i = 1; i <= n; i++) {
+                    size = fsize + dsize * i;
+                    var img_gal = document.getElementById('gal' + i);
+                    img_gal.height = size;
+                    img_gal.width = size * alpha;
+                    img_gal.style.position = "absolute";
+                    img_gal.style.top = 30 + (max_size*alpha - size) / 2 + "px";
+                    img_gal.style.left = (max_size - size) / 2 * alpha + "px";
+                    img_gal.style.opacity = 1.0 - i / n;
+
+                    anime({
+                        targets: '#gal' + i,
+                        rotate: nrot*360,
+                        delay: dtime*i,
+                        duration: time*1000,
+                        loop: true
+                    });
+                }
+
+
+            }
+            </script>
+        </main>
+        <footer>
+            <small>&copy; 2020 Yu Mikase.</small>
+        </footer>
+    </body>
+</html>
