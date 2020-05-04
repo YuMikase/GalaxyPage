@@ -20,3 +20,7 @@ function out_contents(n) {
     }
     document.write("</div>");
 }
+/*----------フッターの出力----------*/
+function out_footer() {
+    document.write("<footer><small>&copy; 2020 Yu Mikase.</small ></footer >");
+}
