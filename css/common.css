@@ -1,38 +1,38 @@
 html {
-    font-family: "Yu Gothic", "ŸàƒSƒVƒbƒN", YuGothic, "ŸàƒSƒVƒbƒN‘Ì", "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "ƒƒCƒŠƒI";
+    font-family: "Yu Gothic", "æ¸¸ã‚´ã‚·ãƒƒã‚¯", YuGothic, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W3", "ãƒ¡ã‚¤ãƒªã‚ª";
     font-weight: 900;
 }
 
-/*----------‘èA–ÚŸ‚Ìİ’è----------*/
-/*‘è‚Ìİ’è*/
+/*----------é¡Œç›®æ¬¡ã®è¨­å®š----------*/
+/*é¡Œã®è¨­å®š*/
 h1 {
     border: solid 4px;
     text-align: center;
 }
-/*–ÚŸ‘S‘Ì*/
+/*ç›®æ¬¡å…¨ä½“*/
 #contents {
     border: solid 4px;
     text-align: center;
 }
-/*¡ŠJ‚¢‚Ä‚¢‚éƒy[ƒW*/
+/*ä»Šé–‹ã„ã¦ã„ã‚‹ãƒšãƒ¼ã‚¸*/
 #bor {
     padding: 2px;
     border: solid 1px black;
     margin: 4px 4px;
 }
-/*¡ŠJ‚¢‚Ä‚¢‚È‚¢ƒy[ƒW*/
+/*ä»Šé–‹ã„ã¦ã„ãªã„ãƒšãƒ¼ã‚¸*/
 #nbor {
     padding: 2px;
     margin: 5px 5px;
 }
-/*----------body•”•ª‚Ìİ’è----------*/
+/*----------bodyéƒ¨åˆ†ã®è¨­å®š----------*/
 body {
     width: 800px;
     margin: 10px auto;
     padding: 5px 20px;
     border: solid 10px;
 }
-/*----------ƒtƒbƒ^[‚Ìİ’è----------*/
+/*----------ãƒ•ãƒƒã‚¿ãƒ¼ã®è¨­å®š----------*/
 footer {
     border-top: solid 1px gray;
     text-align: center;
