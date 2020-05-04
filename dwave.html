@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="Shift-JIS" />
+    <meta charset="UTF-8" />
     <link rel="Stylesheet" href="css/common.css" />
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/anime.min.js"></script>
@@ -13,20 +13,20 @@
         <script type="text/javascript">out_contents(4);</script>
     </header>
     <main>
-        <p>‚±‚±‚Å‚Í–§“x”g‚Ì“®‚«‚ğƒAƒjƒ[ƒVƒ‡ƒ“‚Å•\Œ»‚µ‚Ä‚İ‚½‚¢B</p>
+        <p>ã“ã“ã§ã¯å¯†åº¦æ³¢ã®å‹•ãã‚’ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã§è¡¨ç¾ã—ã¦ã¿ãŸã„ã€‚</p>
         <form style="border-style:solid none; border-width:1px; padding:4px 0px;">
             <p>
-                —±q‚Ì”F<input type="number" value="30" id="num_of_sq" />
+                ç²’å­ã®æ•°ï¼š<input type="number" value="30" id="num_of_sq" />
             </p>
             <p>
-                —±q‚Ì‘å‚«‚³[px]F<input type="number" value="10" id="sq_size" />
+                ç²’å­ã®å¤§ãã•[px]ï¼š<input type="number" value="10" id="sq_size" />
             </p>
             <p>
-                —±qŠÔ‚Ì‹——£[px]F<input type="number" value="5" id="sq_margin" />
+                ç²’å­é–“ã®è·é›¢[px]ï¼š<input type="number" value="5" id="sq_margin" />
             </p>
             <p>
-                ‰¹‘¬F<input type="number" value="20" id="sound_speed" />
-                <small>i‘å‚«‚­‚·‚é‚Æ”g‚Ì‘¬“x‚ªã‚ª‚é‚æj</small>
+                éŸ³é€Ÿï¼š<input type="number" value="20" id="sound_speed" />
+                <small>ï¼ˆå¤§ããã™ã‚‹ã¨æ³¢ã®é€Ÿåº¦ãŒä¸ŠãŒã‚‹ã‚ˆï¼‰</small>
             </p>
             <input type="button" value="RUN" onClick="run()" />
         </form>
@@ -36,7 +36,7 @@
                 var sq_size = Number(document.getElementById("sq_size").value);
                 var sq_margin = Number(document.getElementById("sq_margin").value);
                 var sound_speed = Number(document.getElementById("sound_speed").value);
-                document.write("<div style='height:30px; width:200px;'><a href='dwave.html'>©”’l“ü—Í‚Ö–ß‚é</a></div>");
+                document.write("<div style='height:30px; width:200px;'><a href='dwave.html'>â†æ•°å€¤å…¥åŠ›ã¸æˆ»ã‚‹</a></div>");
                 dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
                 dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
                 dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
