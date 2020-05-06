@@ -6,19 +6,22 @@
     <title>Galaxy - Ellipse</title>
     <link rel="Stylesheet" href="css/common.css" />
     <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anime.min.js"></script>
 </head>
 <body>
-    <header>
-        <script type="text/javascript">out_contents(1);</script>
-    </header>
-    <main>
-        <p>楕円銀河の特徴をまとめる。</p>
-        <ul>
-            <li>ラグビーボールみたいな立体的な形状</li>
-            <li>比較的古い星の集まり</li>
-            <li>比較的赤い色をしている。</li>
-        </ul>
-    </main>
-    <script type="text/javascript">out_footer();</script>
+    <div id="maincont">
+        <h1>楕円銀河について</h1>
+        <button id="navani_player">目次を表示</button>
+        <section id="sectionmain">
+            <p>楕円銀河の特徴をまとめる。</p>
+            <ul>
+                <li>ラグビーボールみたいな立体的な形状</li>
+                <li>比較的古い星の集まり</li>
+                <li>比較的赤い色をしている。</li>
+            </ul>
+        </section>
+        <script type="text/javascript">out_footer();</script>
+    </div>
+    <script type="text/javascript">out_contents_ani(1);</script>
 </body>
 </html>

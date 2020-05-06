@@ -1,40 +1,43 @@
 ﻿<!DOCTYPE html>
 
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Galaxy - Spiral</title>
-		<link rel="Stylesheet" href="css/common.css"/>
-        <script type="text/javascript" src="js/common.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>Galaxy - Spiral</title>
+    <link rel="Stylesheet" href="css/common.css" />
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anime.min.js"></script>
+</head>
     <body>
-        <header>
-            <script type="text/javascript">out_contents(2);</script>
-        </header>
-        <main>
-            <p>渦巻銀河の特徴をまとめる。</p>
-            <ul>
-                <li>円盤状で平べったい形</li>
-                <li>中心は古い星が多く、外側の"腕"の部分は若い星が多い</li>
-                <li>中心が赤っぽく、外側は青っぽい色をしている。</li>
-            </ul>
-            <p>
-                渦巻銀河に特徴的な腕がどのようにして形成されたかは2020年現在では確定していない。
-                腕のでき方について様々な説がある中から一つをあげると「密度波理論」がある。これは、密度の濃いところと薄いところがあり、
-                これが中心から外側に向かって伝播していく波（密度波）の理論を銀河の円盤にあてはめたものだ。
-                この「密度波」に対する説明ではしばしば車の渋滞で表現される。
-                <br />
-                <br />複数の車が一定間隔で連なって走行している。みんな車間距離は一定になるように気を付けている。
-                ある時、先頭の車が一瞬減速したとき、2番目の車との車間距離が小さくなる。
-                2番目の車は減速をして車間距離を保とうとする。2番目の車が減速したので3番目の車との車間距離が小さくなり、
-                3番目の車が減速して・・・と続く。
-                車間距離が小さくなった部分（密度が大きくなった部分）は先頭から後方に向かって波のように伝わっていく。
-                これが密度波だ。<a href="dwave.html">密度波（アニメーション）</a>のページでそのイメージを表現する。
-                <br />
-                <br />銀河の場合は、この密度波が定常的にある銀河の円盤が回転することで渦を巻く腕が形作られる。
-                という考え方であり、一定の支持を得ている。
-            </p>
-        </main>
-        <script type="text/javascript">out_footer();</script>
+        <div id="maincont">
+            <h1>渦巻銀河について</h1>
+            <button id="navani_player">目次を表示</button>
+            <section id="sectionmain">
+                <p>渦巻銀河の特徴をまとめる。</p>
+                <ul>
+                    <li>円盤状で平べったい形</li>
+                    <li>中心は古い星が多く、外側の"腕"の部分は若い星が多い</li>
+                    <li>中心が赤っぽく、外側は青っぽい色をしている。</li>
+                </ul>
+                <p>
+                    渦巻銀河に特徴的な腕がどのようにして形成されたかは2020年現在では確定していない。
+                    腕のでき方について様々な説がある中から一つをあげると「密度波理論」がある。これは、密度の濃いところと薄いところがあり、
+                    これが中心から外側に向かって伝播していく波（密度波）の理論を銀河の円盤にあてはめたものだ。
+                    この「密度波」に対する説明ではしばしば車の渋滞で表現される。
+                    <br />
+                    <br />複数の車が一定間隔で連なって走行している。みんな車間距離は一定になるように気を付けている。
+                    ある時、先頭の車が一瞬減速したとき、2番目の車との車間距離が小さくなる。
+                    2番目の車は減速をして車間距離を保とうとする。2番目の車が減速したので3番目の車との車間距離が小さくなり、
+                    3番目の車が減速して・・・と続く。
+                    車間距離が小さくなった部分（密度が大きくなった部分）は先頭から後方に向かって波のように伝わっていく。
+                    これが密度波だ。<a href="dwave.html">密度波（アニメーション）</a>のページでそのイメージを表現する。
+                    <br />
+                    <br />銀河の場合は、この密度波が定常的にある銀河の円盤が回転することで渦を巻く腕が形作られる。
+                    という考え方であり、一定の支持を得ている。
+                </p>
+            </section>
+            <script type="text/javascript">out_footer();</script>
+        </div>
+        <script type="text/javascript">out_contents_ani(2);</script>
     </body>
 </html>

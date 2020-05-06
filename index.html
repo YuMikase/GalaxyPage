@@ -1,16 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Galaxy - Home</title>
-        <link rel="Stylesheet" href="css/common.css" />
-        <script type="text/javascript" src="js/common.js"></script>
-    </head>
-    <body>
-        <header>
-            <script type="text/javascript">out_contents(0);</script>
-        </header>
-        <main>
+<head>
+    <meta charset="UTF-8" />
+    <title>Galaxy - Home</title>
+    <link rel="Stylesheet" href="css/common.css" />
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/anime.min.js"></script>
+</head>
+<body>
+    <div id="maincont">
+        <h1>Home</h1>
+        <button id="navani_player">目次を表示</button>
+        <section id="sectionmain">
             <p>
                 ここでは、銀河についての簡単な解説をしていく。
                 <br />まず、銀河の分類をざっくりと。
@@ -27,7 +28,9 @@
                 観測をしてきれいな渦が見えるとテンションが上がる。
                 <br />不規則銀河は規則的な形状を持たない銀河である。
             </p>
-        </main>
+        </section>
         <script type="text/javascript">out_footer();</script>
-    </body>
+    </div>
+    <script type="text/javascript">out_contents_ani(0);</script>
+</body>
 </html>
