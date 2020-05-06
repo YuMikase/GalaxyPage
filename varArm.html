@@ -43,7 +43,7 @@
                     <small>（ここを変えても大した変化はない）</small>
                 </p>
                 <p>
-                    長径と短径の比（長/短）：<input type="number" value="1.2" id="alpha" />
+                    長径と短径の比（長/短）：<input type="number" value="1" id="alpha" />
                     <small>（楕円の形状を変えられる。1だと真円になるので腕は現れない。1より大きい数字で試してみてね）</small>
                 </p>
                 <p>
@@ -127,9 +127,19 @@
 
                     anime({
                         targets: '#gal' + i,
-                        rotate: nrot*360,
-                        delay: dtime*i,
-                        duration: time*1000,
+                        rotate: {
+                            value:  360*5,
+                            duration: 10000,
+                            easing: "linear",
+                        },
+                        scaleX: {
+                            value: '*=1.2',
+                            delay: dtime * i/10,
+                            endDelay: dtime * (n-i),
+                            duration: 100,
+                            direction: 'alternate',
+                            loop: true
+                        },
                         loop: true
                     });
                 }

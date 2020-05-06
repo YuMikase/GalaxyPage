@@ -11,13 +11,22 @@
     
 <body>
     <header>
-        <script type="text/javascript">out_contents(4);</script>
+        <script type="text/javascript">out_contents(3);</script>
     </header>
     <main>
-        <p>ここでは密度波の動きをアニメーションで表現してみたい。</p>
+        <p>ここでは密度波の動きをアニメーションで表現してみたい。
+            <br />
+            <br />そもそも密度波と言っているけれど、疎密波や縦波、といった言い方のほうがしっくりくる人がいるかも知れない。日常的に触れている密度波に「音」がある。空気中の粒子（窒素や酸素など）の密度の高いところが伝わっていくものだ。
+            銀河の腕で言われるところの密度波と音の波が伝播する原理は異なるが、「密度が伝播する」という点で一致している。その「密度が伝播する」イメージをアニメーションで表現したい。
+            <br />    
+            <br />「進行波」もしくは「後退波」を押せばアニメーションが表示される。
+            <br />
+            <br />注意1）このアニメーションは物理演算ではないため、定性的なイメージのみを表現したものである。
+            <br />注意2）密度波理論は渦状腕の説明として有力な「説」であり、2020年5月現在、正しいと証明されてはいない。
+        </p>
         <form style="border-style:solid none; border-width:1px; padding:4px 0px;">
             <p>
-                粒子の数：<input type="number" value="30" id="num_of_sq" />
+                粒子の数：<input type="number" value="20" id="num_of_sq" />
             </p>
             <p>
                 粒子の大きさ[px]：<input type="number" value="10" id="sq_size" />
@@ -26,10 +35,15 @@
                 粒子間の距離[px]：<input type="number" value="5" id="sq_margin" />
             </p>
             <p>
-                音速：<input type="number" value="20" id="sound_speed" />
+                音速：<input type="number" value="5" id="sound_speed" />
                 <small>（大きくすると波の速度が上がるよ）</small>
             </p>
-            <input type="button" value="RUN" onClick="run()" />
+            <p>
+                系の速度：<input type="number" value="550" id="system_speed" />
+                <small>（粒子たち全体の移動速度。0で静止）</small>
+            </p>
+            <p><input type="button" value="進行波" onClick="run()" /><small>：系は右向きに、波も右向きに伝播</small></p>
+            <p><input type="button" value="後退波" onClick="runminus()" /><small>：系は右向きに、波は左向きに伝播</small></p>
         </form>
         <script type="text/javascript">
             function run() {
@@ -37,12 +51,28 @@
                 var sq_size = Number(document.getElementById("sq_size").value);
                 var sq_margin = Number(document.getElementById("sq_margin").value);
                 var sound_speed = Number(document.getElementById("sound_speed").value);
+                var system_speed = Number(document.getElementById("system_speed").value);
                 document.write("<div style='height:30px; width:200px;'><a href='dwave.html'>←数値入力へ戻る</a></div>");
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed);
+                document.write("<div style='height:30px; width:200px;'>進行波</div>");
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+            }
+            function runminus() {
+                var num_of_sq = Number(document.getElementById("num_of_sq").value);
+                var sq_size = Number(document.getElementById("sq_size").value);
+                var sq_margin = Number(document.getElementById("sq_margin").value);
+                var sound_speed = Number(document.getElementById("sound_speed").value);
+                var system_speed = Number(document.getElementById("system_speed").value);
+                document.write("<div style='height:30px; width:200px;'><a href='dwave.html'>←数値入力へ戻る</a></div>");
+                document.write("<div style='height:30px; width:200px;'>後退波</div>");
+                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
+                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
             }
         </script>
     </main>
