@@ -26,9 +26,9 @@ function out_contents_ani(n) {
     /*アニメーションの秒数*/
     var dura = 1000;
     /*nav部分の高さ*/
-    var nav_height = 250;
+    var nav_height = 70;
     /*要素の生成*/
-    document.write("<nav><p id='nav_title'>目次</p><ul>");
+    document.write("<nav><ul>");
     for (i = 0; i < contents_list.length; i++) {
         if (i == n) {
             var m = 'bor';
@@ -50,11 +50,48 @@ function out_contents_ani(n) {
         .add({
             targets: "nav > ul > li",
             opacity: { value: [0.0, 1.0], duration: dura, delay: anime.stagger(100) },
-            translateY: { value: 30, duration: dura, delay: anime.stagger(100) },
+            translateY: { value: 15, duration: dura, delay: anime.stagger(100) },
             rotateX: { value: 360, duration: dura, delay: anime.stagger(100) }
         });
     document.write("</ul></nav>");
-    document.querySelector('#navani_player').onclick = navani.play;
+    document.getElementById('navani_player').onclick = navani.play;
+}
+
+/*----------「前」「次」の出力----------*/
+function out_prevnext(n) {
+    if (n == 0) {
+        document.write("<div id='prevnext'>");
+        document.write("<div id='prevlink'>");
+        document.write("</div>");
+        document.write("<div id='homelink'>");
+        document.write("</div>");
+        document.write("<div id='nextlink'>");
+        document.write("<a href='" + contents_list_file[n + 1] + ".html'>→" + contents_list[n + 1] + "</a></div></div>");
+    } else if (n == 1) {
+        document.write("<div id='prevnext'>");
+        document.write("<div id='prevlink'>");
+        document.write("<a href='" + contents_list_file[n - 1] + ".html'>←" + contents_list[n - 1] + "</a></div>");
+        document.write("<div id='homelink'>");
+        document.write("</div>");
+        document.write("<div id='nextlink'>");
+        document.write("<a href='" + contents_list_file[n + 1] + ".html'>→" + contents_list[n + 1] + "</a></div></div>");
+    } else if (n == contents_list.length - 1) {
+        document.write("<div id='prevnext'>");
+        document.write("<div id='prevlink'>");
+        document.write("<a href='" + contents_list_file[n - 1] + ".html'>←" + contents_list[n - 1] + "</a></div>");
+        document.write("<div id='homelink'>");
+        document.write("<a href='" + contents_list_file[0] + ".html'>" + contents_list[0] + "</a></div>");
+        document.write("<div id='nextlink'>");
+        document.write("</div></div>");
+    } else {
+        document.write("<div id='prevnext'>");
+        document.write("<div id='prevlink'>");
+        document.write("<a href='" + contents_list_file[n - 1] + ".html'>←" + contents_list[n - 1] + "</a></div>");
+        document.write("<div id='homelink'>");
+        document.write("<a href='" + contents_list_file[0] + ".html'>" + contents_list[0] + "</a></div>");
+        document.write("<div id='nextlink'>");
+        document.write("<a href='" + contents_list_file[n + 1] + ".html'>→" + contents_list[n + 1] + "</a></div></div>");
+    }
 }
 
 

@@ -1,13 +1,18 @@
+/*----------全体の設定----------*/
 html {
     font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ";
     font-weight: 900;
 }
-
+body {
+    display: flex;
+    flex-direction: column;
+}
 /*----------題、目次の設定----------*/
 /*題の設定*/
 h1 {
     border: solid 5px;
     text-align: center;
+    padding: 10px;
 }
 /*目次全体*/
 #contents {
@@ -28,47 +33,65 @@ h1 {
 
 /*----------nav部分の設定----------*/
 nav {
-    position: absolute;
-    margin: 10px;
-    width: 200px;
+    margin: 10px auto;
+    width: 800px;
     border: solid 10px;
+    padding: 0px 70px;
+    order: 1;
 }
 nav > ul {
     margin:0;
+    float: left;
     padding:0;
     list-style: none;
 }
 nav > ul >li {
     margin: 5px;
-    padding: 0;
-}
-#nav_title {
-    margin: 0px;
-    margin-top: 5px;
-    text-align: center;
+    padding: 5px;
+    float: left;
 }
 #navani_player {
     font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ";
     font-weight: 900;
-    border: solid 2px black;
+    border: none;
     width: 150px;
     height: 50px;
 }
 /*----------maincontent部分の設定----------*/
 #maincont {
-    position: absolute;
-    left: 250px;
+    clear: both;
     width: 800px;
-    margin: 10px;
-    padding: 5px 20px;
+    margin: 10px auto;
+    padding: 10px 70px 0px;
     border: solid 10px;
+    order: 2;
 }
 /*----------sectionmain部分の設定----------*/
 #sectionmain {
 }
+#prevnext {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    border-top: solid 1px gray;
+}
+#prevlink {
+    margin: 10px;
+    width: 250px;
+}
+#homelink {
+    margin: 10px;
+    width: 250px;
+}
+#nextlink {
+    margin: 10px;
+    width: 250px;
+}
 /*----------フッターの設定----------*/
 footer {
-    margin: 10px;
+    padding: 10px;
     clear: both;
     border-top: solid 1px gray;
     text-align: center;
