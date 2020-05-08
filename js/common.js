@@ -55,8 +55,8 @@ function out_contents_ani(n) {
         });
     document.write("</ul></nav>");
     document.getElementById('navani_player').onclick = navani.play;
+    
 }
-
 /*----------「前」「次」の出力----------*/
 function out_prevnext(n) {
     if (n == 0) {
@@ -93,8 +93,6 @@ function out_prevnext(n) {
         document.write("<a href='" + contents_list_file[n + 1] + ".html'>→" + contents_list[n + 1] + "</a></div></div>");
     }
 }
-
-
 /*----------フッターの出力----------*/
 function out_footer() {
     document.write("<footer><small>&copy; 2020 Yu Mikase.</small ></footer >");

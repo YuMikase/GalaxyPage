@@ -1,3 +1,40 @@
+﻿function dwave() {
+    var keyval = location.search.split(/[?=&]/);
+    var n_sq = Number(keyval[2]);
+    var sqsize = Number(keyval[4]);
+    var sq_margin = Number(keyval[6]);
+    var sound_speed = Number(keyval[8]);
+    var system_speed = Number(keyval[10]);
+    var sq_rows = Number(keyval[12]);
+    document.write("<div id='dwave_area' style='height:" + ((sqsize + sq_margin * 2) * sq_rows)+"px;width: 800px;margin:10px;overflow:hidden;'>");
+    for (n = 0; n < sq_rows; n++) {
+        document.write("<div id='dwave_sqs' style='height:" + (sqsize + sq_margin*2) +"px;width: 800px;'>");
+        for (i = 0; i < n_sq; i++) {
+            document.write("<div id='dwave_sq"+n+"' style='float:left;background-color:black; margin:" + sq_margin
+                + "px;height:" + sqsize + "px;width:" + sqsize + "px;'></div>");
+        }
+        anime({
+            targets: "#dwave_sq" + n,
+            translateX: 20,
+            delay: anime.stagger(1000 / sound_speed),
+            loop: true
+        })
+        document.write("</div>");
+    }
+    anime({
+        targets: "#dwave_sqs",
+        translateX: 100,
+        duration: (1000 / sound_speed) * (n_sq-1) + 1000 ,
+        easing: "linear",
+        loop: true
+    })
+    document.write("</div>");
+    
+    
+}
+
+
+
 function dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed) {
     var default_delay = 500;
     var arr = [...Array(num_of_sq).keys()]

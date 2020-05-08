@@ -54,8 +54,10 @@ nav > ul >li {
     font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ";
     font-weight: 900;
     border: none;
+    margin: 5px;
     width: 150px;
     height: 50px;
+    background-color:#dddddd;
 }
 /*----------maincontent部分の設定----------*/
 #maincont {
