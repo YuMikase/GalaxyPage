@@ -10,36 +10,6 @@
 </head>
     
 <body>
-        <script type="text/javascript">
-            function run() {
-                var num_of_sq = Number(document.getElementById("num_of_sq").value);
-                var sq_size = Number(document.getElementById("sq_size").value);
-                var sq_margin = Number(document.getElementById("sq_margin").value);
-                var sound_speed = Number(document.getElementById("sound_speed").value);
-                var system_speed = Number(document.getElementById("system_speed").value);
-                document.write("<div style='height:30px; width:200px;'><a href='dwave.html'>←数値入力へ戻る</a></div>");
-                document.write("<div style='height:30px; width:200px;'>進行波</div>");
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-                dwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-            }
-            function runminus() {
-                var num_of_sq = Number(document.getElementById("num_of_sq").value);
-                var sq_size = Number(document.getElementById("sq_size").value);
-                var sq_margin = Number(document.getElementById("sq_margin").value);
-                var sound_speed = Number(document.getElementById("sound_speed").value);
-                var system_speed = Number(document.getElementById("system_speed").value);
-                document.write("<div style='height:30px; width:200px;'><a href='dwave.html'>←数値入力へ戻る</a></div>");
-                document.write("<div style='height:30px; width:200px;'>後退波</div>");
-                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-                minusdwaves(num_of_sq, sq_size, sq_margin, sound_speed, system_speed);
-            }
-        </script>
     <div id="maincont">
         <h1>密度波（アニメーション）</h1>
         <button id="navani_player">目次を表示</button>
